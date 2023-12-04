@@ -1,8 +1,17 @@
 <script>
+import FeaturedCard from './FeaturedCard.vue';
+import { store } from '../store'
+
 export default {
     props: {
         sections: Array,
-    }
+    },
+    components: { FeaturedCard },
+    data() {
+        return {
+            store,
+        }
+    },
 }
 </script>
 
@@ -14,12 +23,21 @@ export default {
             </div>
         </div>
     </div>
-    <div>
+    <div class="border-y">
         <div class="container">
             <div class="link position-relative">
-                <ul class="d-flex gap-4 py-4 px-0">
+                <ul class="d-flex justify-content-start flex-row gap-4 py-4 px-0">
                     <li v-for="(section) in sections"><a href="">{{ section }}</a></li>
                 </ul>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="container">
+            <div class="row row-cols-3 g-4 py-4">
+                <div v-for="(featuredPost, index) in store.featured" :key="index" class="col-4">
+                    <FeaturedCard :img="featuredPost.img" :description="featuredPost.description" :badges="featuredPost.badges"/>
+                </div>
             </div>
         </div>
     </div>
@@ -32,20 +50,12 @@ export default {
     width: 150px;
 }
 
+.border-y {
+    border-top: 4px solid $background-grey;
+    border-bottom: 4px solid $background-grey;
+}
 .link {
     ul {
-        &::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: -120px;
-            width: 100vw;
-            height: 100%;
-            border-top: 5px solid $background-grey;
-            border-bottom: 5px solid $background-grey;
-            z-index: -1;
-        }
-
         li {
             list-style-type: none;
 
@@ -59,5 +69,9 @@ export default {
             color: inherit;
         }
     }
+}
+
+.wrapper {
+    background-color: $background-grey;
 }
 </style>
