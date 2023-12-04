@@ -9,6 +9,7 @@ export default {
   data() {
     return {
       store,
+      sections: ["HOME", "ELEMENTS", "FEATURES", "PAGES", "PORTFOLIO", "BLOG", "SHOP"],
     }
   },
   components: { AppHeader, AppMain, AppFooter },
@@ -20,7 +21,7 @@ export default {
     <AppHeader />
   </header>
   <main>
-    <AppMain />
+    <AppMain :sections="sections"/>
   </main>
   <footer>
     <AppFooter />
