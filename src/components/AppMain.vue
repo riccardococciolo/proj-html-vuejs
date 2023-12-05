@@ -3,16 +3,24 @@ import FeaturedCard from './FeaturedCard.vue';
 import { store } from '../store'
 import SmallCard from './SmallCard.vue';
 import Button from './Button.vue';
+import PostCard from './PostCard.vue';
 
 export default {
     props: {
         sections: Array,
     },
-    components: { FeaturedCard, SmallCard, Button },
+    components: { FeaturedCard, SmallCard, Button, PostCard },
     data() {
         return {
             store,
+            mosaicImg: ["29739607_2020680068220520_4509928046932787200_n.jpg", "30087804_253872848488989_8792603541668626432_n.jpg", "29415620_196477127626244_3250318472361541632_n.jpg", "30078414_1274410412703843_8290935809419247616_n.jpg", "30077195_2066750973610181_3733150062893596672_n.jpg", "29415304_166583630713703_1032667922171953152_n.jpg"],
+            tags: ["DESIGN", "BRANDS", "VIDEO", "BUSINESS", "TRAVEL",]
         }
+    },
+    methods: {
+        getImgPath(img) {
+            return new URL(`../assets/img/${img}`, import.meta.url).href
+        },
     },
 }
 </script>
@@ -77,6 +85,46 @@ export default {
             </div>
         </div>
     </div>
+    <div>
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-9">
+                    <PostCard v-for="(post) in store.posts" :img="post.img" :title="post.title" :category="post.category" />
+                </div>
+                <div class="col-3">
+                    <h6 class="pt-4">LATEST FROM TWITTER</h6>
+                    <div class="d-flex gap-2 py-3">
+                        <span><i class="fa-brands fa-twitter"></i></span>
+                        <div>
+                            <p class="text-grey m-0">If you have any suggestions for the next updates, let us know.</p>
+                            <span class="text-blue text-sm">01:05 PM Sep 18th</span>
+                        </div>
+                    </div>
+                    <div class="d-flex gap-2">
+                        <span><i class="fa-brands fa-twitter"></i></span>
+                        <div>
+                            <p class="text-grey m-0">We have just updated Porto Admin. Check the changelog for more information.</p>
+                            <span class="text-blue text-sm">01:04 PM Sep 18th</span>
+                        </div>
+                    </div>
+                    <h6 class="pt-5">PHOTOS FROM INSTAGRAM</h6>
+                    <div class="row row-cols-3 ps-3 py-2">
+                        <div v-for="(img) in mosaicImg" class="col p-0">
+                            <img class="object-fit-contain w-100" :src="getImgPath(img)" alt="">
+                        </div>
+                    </div>
+                    <h6 class="py-3">TAGS</h6>
+                    <div class="pb-5">
+                        <span v-for="(tag) in tags" class="badge rounded-pill text-bg-dark badge-sm me-2">{{ tag }}</span>
+                    </div>
+                    <h6 class="pt-4">FIND US ON FACEBOOK</h6>
+                    <div class="mt-4">
+                        <span class="text-blue p-3 border-start border-4">Okler Themes</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </template>
 
 <style lang="scss" scoped>
@@ -114,5 +162,17 @@ export default {
 
 .wrapper-blue {
     background-color: $primary-color;
+}
+.text-grey {
+    color: $text-grey;
+    font-size: smaller;
+}
+
+.text-blue {
+    color: $primary-color;
+}
+
+.text-sm {
+    font-size: .8rem;
 }
 </style>
