@@ -87,5 +87,32 @@ export const store = reactive({
         date: "12 Healthiest Foods to Eat for Breakfast",
       }
     ],
-    categories: ["GADGETS", "PHOTOGRAPHY", "LIFESTYLE", "FASHION", "RECIPES", "TRAVEL",]
+    categories: ["GADGETS", "PHOTOGRAPHY", "LIFESTYLE", "FASHION", "RECIPES", "TRAVEL",],
+    posts: [
+      {
+        img: "blog-54.jpg",
+        title: "How to Make Friends as a Grown-UP",
+        category: "Lifestyle, Travel",
+      },
+      {
+        img: "blog-55 (1).jpg",
+        title: "Simple Ways to Have a Pretty Face January",
+        category: "Photography, Travel",
+      },
+      {
+        img: "blog-56 (1).jpg",
+        title: "Ranking the greatest players in basketball",
+        category: "Sports, Business",
+      },
+      {
+        img: "blog-58 (1).jpg",
+        title: "4 Ways to Look Cool in Glasses",
+        category: "Travel, Lifestyle",
+      },
+      {
+        img: "blog-65 (1).jpg",
+        title: "10 Best Travel Tips After 5 Years Traveling The world",
+        category: "Travel, Lifestyle",
+      }
+    ],
 });
