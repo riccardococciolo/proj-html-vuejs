@@ -33,4 +33,59 @@ export const store = reactive({
         badges: "RECIPES",
       },
     ],
+    popularPosts: [
+      {
+        img: "blog-55.jpg",
+        title: "Simple Ways to Have a Pretty Face January",
+        date: "January 12, 2019",
+      },
+      {
+        img: "blog-56.jpg",
+        title: "Ranking the greatest players in basketball",
+        date: "January 12, 2019",
+      },
+      {
+        img: "blog-57.jpg",
+        title: "4 Ways to Look Cool in Glasses",
+        date: "January 12, 2019",
+      },
+      {
+        img: "blog-58.jpg",
+        title: "Top Camper Trailer Towing Tips",
+        date: "January 12, 2019",
+      },
+      {
+        img: "blog-59.jpg",
+        title: "5 Lovely Walks in New York",
+        date: "January 12, 2019",
+      }
+    ],
+    recentPosts: [
+      {
+        img: "blog-65.jpg",
+        title: "Main Reasons To Stop Texting And Driving",
+        date: "January 12, 2019",
+      },
+      {
+        img: "blog-66 (1).jpg",
+        title: "Tips to Help You Quickly Prepare your Lunch",
+        date: "January 12, 2019",
+      },
+      {
+        img: "blog-67.jpg",
+        title: "Why should I buy a smartwatch?",
+        date: "January 12, 2019",
+      },
+      {
+        img: "blog-68.jpg",
+        title: "The best augmented reality smartglasses",
+        date: "January 12, 2019",
+      },
+      {
+        img: "blog-69.jpg",
+        title: "5 Fun Things to Do at the Beach",
+        date: "12 Healthiest Foods to Eat for Breakfast",
+      }
+    ],
+    categories: ["GADGETS", "PHOTOGRAPHY", "LIFESTYLE", "FASHION", "RECIPES", "TRAVEL",]
 });
