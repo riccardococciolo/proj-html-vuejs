@@ -90,6 +90,11 @@ export default {
             <div class="row">
                 <div class="col-9">
                     <PostCard v-for="(post) in store.posts" :img="post.img" :title="post.title" :category="post.category" />
+                    <div class="text-end pt-4">
+                        <span class="square rounded-start-2"><i class="fa-solid fa-chevron-left"></i></span>
+                        <span class="square" v-for="(num) in 3">{{ num }}</span>
+                        <span class="square rounded-end-2"><i class="fa-solid fa-chevron-right"></i></span>
+                    </div>
                 </div>
                 <div class="col-3">
                     <h6 class="pt-4">LATEST FROM TWITTER</h6>
@@ -174,5 +179,19 @@ export default {
 
 .text-sm {
     font-size: .8rem;
+}
+
+.square {
+    line-height: 30px;
+    text-align: center;
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    border: 1px solid rgb(211, 211, 211);
+    color: $primary-color;
+    &:hover {
+        background-color: $primary-color;
+        color: white;
+    }
 }
 </style>

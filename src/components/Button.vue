@@ -23,5 +23,8 @@ export default {
 .my-button {
     background-color: $text-black;
     color: white;
+    &:hover {
+        scale: .97;
+    }
 }
 </style>
